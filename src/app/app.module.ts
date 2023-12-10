@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { MapComponent } from './components/map/map.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +17,6 @@ import { WeatherService } from './services/weather.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    MapComponent,
     HeaderComponent,
     PagenotfoundComponent,
     RegisterComponent,

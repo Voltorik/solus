@@ -34,17 +34,4 @@ export class HomeComponent implements OnInit {
       tap((data: any) => console.log(data))
     )
   }
-
-  weatherIcon(icon: any) {
-    switch (icon) {
-      case 'partly-cloudy-day':
-        return 'wi wi-day-cloudy'
-      case 'clear-day':
-        return 'wi wi-day-sunny'
-      case 'partly-cloudy-night':
-        return 'wi wi-night-partly-cloudy'
-      default:
-        return `wi wi-day-sunny`
-    }
-  }
 }

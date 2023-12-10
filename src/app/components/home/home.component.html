@@ -1,15 +1,4 @@
 <app-header></app-header>
-<!-- <main id="main" class="position-relative p-5">
-    <div id="mainDisplay" class="text-center bg-dark p-3 w-75 mx-auto d-flex flex-column">
-        <h1 class="text-white-50">What's the weather?</h1>
-        <h5 class="text-white-50">Enter a U.S. city below to find out</h5>
-        <form id="weatherSearch" action="">
-          <input class="form-class w-50" id="search" placeholder="Input your search keyword" name="search">
-          <br><br>
-          <a routerLink="/home" class="btn btn-warning">Weather</a>
-          <input type="button" class="btn btn-warning" id="submit2" value="Forecast!" name="forecast">
-        </form>
-    </div> -->
   <section>
     <h1>
       <i class="wi wi-barometer"></i> Your Local Weather Forecast
@@ -25,9 +14,11 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  <i [class]="weatherIcon(day.icon)" class="card-img-top"></i>
-                  <h3 class="card-title">{{ day.dt_txt }}</h3>
-                  <p class="card-text">{{ day.weather.main }}</p>
+                  <h3 class="card-title">Temperature: {{ day.main.temp }} &deg;F</h3>
+                  <p class="card-text">Feels Like: {{ day.main.feels_like }} &deg;F</p>
+                  <p class="card-text">Humidity: {{ day.main.humidity }}%</p>
+                  <p class="card-text">Wind speed: {{ day.wind.speed }}mph</p>
+                  <p class="card-text">{{ day.dt_txt }}</p>
                 </div>
               </div>
             </div>
