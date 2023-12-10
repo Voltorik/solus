@@ -1,0 +1,24 @@
+.btn {
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    padding: 7px 20px;
+}
+
+#mainDisplay {
+    border-radius: 10px;
+}
+
+#main {
+    background-image: url("../../../assets/nature-sky-clouds-158163.jpg");
+    background-size: cover;
+    background-position-y: 100%;
+    height: 85vh;
+}
+
+#weatherDisplay {
+    background-color: white;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
