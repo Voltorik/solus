@@ -1,8 +1,6 @@
-import { Component, OnInit} from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Component, ComponentFactoryResolver, OnInit} from '@angular/core';
+import { Observable, tap, of } from 'rxjs';
 import { WeatherService } from 'src/app/services/weather.service';
-import { of } from 'rxjs';
-
 
 @Component({
   selector: 'app-home',
@@ -12,6 +10,7 @@ import { of } from 'rxjs';
 export class HomeComponent implements OnInit {
   lat: number = 0;
   lon: number = 0;
+  location: string = '';
   forecast: Observable<any> = of();
 
   constructor(private weather: WeatherService) { }
@@ -33,5 +32,10 @@ export class HomeComponent implements OnInit {
     this.forecast = this.weather.currentForcast(this.lat, this.lon).pipe(
       tap((data: any) => console.log(data))
     )
+  }
+
+  postData() {
+    this.forecast = this.weather.postUserData(this.lat, this.lon).pipe(
+      tap((data: any) => console.log(data)));
   }
 }

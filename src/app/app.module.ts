@@ -8,9 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
 import { WeatherService } from './services/weather.service';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 
 @NgModule({
@@ -19,8 +18,8 @@ import { WeatherService } from './services/weather.service';
     HomeComponent,
     HeaderComponent,
     PagenotfoundComponent,
-    RegisterComponent,
-    LoginComponent,
+
+    UserDataComponent,
   ],
   imports: [
     BrowserModule,

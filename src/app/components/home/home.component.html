@@ -1,31 +1,56 @@
 <app-header></app-header>
-  <section>
-    <h1>
-      <i class="wi wi-barometer"></i> Your Local Weather Forecast
-    </h1>
-    <p>Current Position: {{ lat }} / {{ lon }} </p>
-    <button class="btn btn-warning" (click)="getForecast()">Get Forecast</button>
-  </section>
+  <h1>
+    <i class="wi wi-barometer"></i> Your Local Weather Forecast
+  </h1>
+  <p>Current Position: {{ lat }} / {{ lon }} </p>
+  <button class="btn btn-warning" (click)="getForecast()">Get Forecast</button>
+  <button 
+    type="button"
+    class="btn btn-warning" 
+    data-bs-toggle="modal"
+    data-bs-target="#modalData"
+    (click)="postData()"
+    >Add your location to the board</button>
 
-  <section id="forecast" class="my-4">
-    <div class="container">
-        <div *ngIf="forecast | async as f">
-          <ng-container *ngFor="let day of f.list" class="container row">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">Temperature: {{ day.main.temp }} &deg;F</h3>
-                  <p class="card-text">Feels Like: {{ day.main.feels_like }} &deg;F</p>
-                  <p class="card-text">Humidity: {{ day.main.humidity }}%</p>
-                  <p class="card-text">Wind speed: {{ day.wind.speed }}mph</p>
-                  <p class="card-text">{{ day.dt_txt }}</p>
-                </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalData" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Your location at lat:{{ lat }}, lon: {{ lon }} has been added to the board</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a routerLink="/userData" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go to User Location board</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="forecast" class="my-4">
+  <div class="container">
+      <div *ngIf="forecast | async as f">
+        <ng-container *ngFor="let day of f.list" class="container row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Temperature: {{ day.main.temp }} &deg;F</h3>
+                <p class="card-text">Feels Like: {{ day.main.feels_like }} &deg;F</p>
+                <p class="card-text">Humidity: {{ day.main.humidity }}%</p>
+                <p class="card-text">Wind speed: {{ day.wind.speed }}mph</p>
+                <p class="card-text">{{ day.dt_txt }}</p>
               </div>
             </div>
-          </ng-container>
-        </div>
-    </div>
-  </section>
+          </div>
+        </ng-container>
+      </div>
+  </div>
+</section>
 
 <!-- </main> -->
 

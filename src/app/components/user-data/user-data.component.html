@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+    <h2>User Location Board</h2>
+
+    <div *ngIf="users | async as u">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Time accessed</th>
+                    <th>Lattitude</th>
+                    <th>Longitude</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of u">
+                <td>{{ i.location }}</td>
+                <td>{{ i.created_at }}</td>
+                <td>{{ i.lat}}</td>
+                <td>{{ i.lon }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
