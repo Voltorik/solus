@@ -11,7 +11,7 @@ To install and run this project locally, follow these steps:
 5. Start the application: `ng serve --open` (Opens a browser tab automatically)
 
 ## Backend
-Link to the frontend is [here](https://github.com/Voltorik/solus_server)
+Link to the backend is [here](https://github.com/Voltorik/solus_server)
 
 ## Tech Stack
 - Frontend is built with [Angular](https://angular.io/) and [Bootstrap](https://getbootstrap.com).
